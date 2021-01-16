@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /
+
+#Object 1
+#Redirect /index.php /test.php
+
+
+#Object 3
+#Redirect /index.php https://www.google.com/
