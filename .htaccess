@@ -1,0 +1,105 @@
+RewriteEngine On
+RewriteBase /
+
+#Object 1
+#Redirect /index.php /test.php
+
+
+#Object 3
+#Redirect /index.php https://www.google.com/
+
+
+
+#Object 5
+#RewriteRule ^dir1/ index1.php
+#RewriteRule ^dir2/ index2.php
+
+
+
+#Object 7
+#RewriteRule \.php$ index.php
+
+
+
+#Object 9
+#RewriteRule (.+)\.html$ $1.php
+
+
+
+#Object 11
+#RedirectMatch /index(.+).php /$1.php
+
+
+
+#Object 13
+#RedirectMatch /(.+)?(dir)(.+)? /index.php
+
+
+
+#Object 15
+#RedirectMatch /test([0-9]).php /index.php
+
+
+
+#Object 17
+#RedirectMatch /([0-9]+)/ /index.php
+
+
+
+#Object 19
+#RewriteRule !\.html$ index.php
+
+
+
+#Object 21
+#RewriteCond %{REQUEST_URI} \.html$
+#RewriteRule .+ index.php
+
+
+
+#Object 23
+#RewriteCond %{REQUEST_URI} \.html$
+#RewriteCond %{REQUEST_URI} ^/content/
+#RewriteRule .+ index.php
+
+
+
+#Object 25
+#RewriteCond %{REQUEST_URI} \.css$ [OR]
+#RewriteCond %{REQUEST_URI} ^/styles/
+#RewriteRule .+ index.php
+
+
+
+#Object 27
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule .+ index.php
+
+
+
+#Object 29
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule .+ index.php
+
+
+
+#Object 31
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule .+ index.php
+
+
+
+#Object 33
+#RewriteCond %{REQUEST_URI} !^/index\.php$
+#RewriteRule (.+) index33.php?get=$1
+
+
+
+#Object 35
+#RewriteRule test.php index.php [NC]
+
+
+
+#Object 37
+#В папке "test" лежит .htaccess, в котором написано: deny from all
